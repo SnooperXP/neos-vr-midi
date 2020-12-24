@@ -1,4 +1,5 @@
 from pygame import midi
+from midi.midi_input import *
 import pprint
 
 midi.init()
@@ -46,4 +47,6 @@ print("Device connected!")
 while True:
 	if device.poll():
 		event = device.read(1)[0]
-		print(f"Clock: {event[1]} :: Status: {event[0][0]} :: Data1: {event[0][1]} :: Data2: {event[0][2]} :: Data3: {event[0][3]}")
+		midi_input_raw = MidiInputRaw(event[0][0], event[0][1:])
+		midi_input = midi_input_raw.map()
+		print(f"Clock: {event[1]} :: Name: {midi_input.name} :: Channel: {midi_input.channel} :: Data: {midi_input.data}")
