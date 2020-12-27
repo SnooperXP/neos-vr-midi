@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="midi-wrapper-SnooperXP",
-    version="0.0.1",
+    version="0.0.2",
     author="Snooper Xp",
     author_email="snooperxp@gmail.com",
     description="A package that wraps Pygame midi for simplified use",

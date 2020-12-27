@@ -1,4 +1,4 @@
-from midi.midi_input import *
+from midi_wrapper.midi_input import *
 
 class MidiData:
 	def __init__(self, clock, event):
