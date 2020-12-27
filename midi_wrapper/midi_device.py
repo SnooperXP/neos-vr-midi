@@ -1,9 +1,13 @@
 from midi_wrapper.midi_input import *
+import json
 
 class MidiData:
 	def __init__(self, clock, event):
 		self.clock = clock
 		self.event = event
+
+	def to_json(self):
+		return json.dumps(self, default=lambda o: o.__dict__)
 
 class MidiDevice:
 	def __init__(self, midi, midi_menu):
